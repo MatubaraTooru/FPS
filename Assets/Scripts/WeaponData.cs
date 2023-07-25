@@ -4,6 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class WeaponData
 {
+    [SerializeField, Header("•Ší‚ÌID")]
+    private int _weaponID = -1;
     [SerializeField, Header("•Ší‚ÌŽí—Þ")]
     private WeaponType _weaponType = WeaponType.None;
     [SerializeField, Header("•Ší‚Ì–¼‘O")]
@@ -21,6 +23,7 @@ public class WeaponData
     [SerializeField, Header("—LŒøŽË’ö")]
     private float _effectiveRange;
 
+    public int WeaponID { get => _weaponID; }
     public WeaponType WeaponTypeData { get => _weaponType; }
     public string WeaponName { get => _weaponName; }
     public float WeaponMaxDamage { get => _weaponMaxDamage; }

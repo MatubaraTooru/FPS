@@ -5,37 +5,54 @@ using UnityEngine.UI;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField]
-    private Transform _muzzle;
+    private Transform _muzzle = null;
     [SerializeField]
-    private WeaponData _weaponData;
+    private WeaponDataAsset _weaponDataAsset = null;
+    private WeaponData _weaponData = null;
     [SerializeField]
-    private Image _crosshair;
-    private Transform _hitTarget;
+    private int _weaponID = -1;
+    [SerializeField]
+    private Image _crosshair = null;
+    private Transform _hitTarget = null;
     private float _fireTimer = 0;
     private bool _isFirePossible = false;
+    private PlayerInput _playerInput = null;
+    private InputAction _fireAction = null;
     private void Awake()
     {
-        
+        if (_weaponID != -1)
+            _weaponData = _weaponDataAsset.WeaponDatas[_weaponID];
+        _playerInput = FindAnyObjectByType<PlayerInput>();
+        _fireAction = _playerInput.actions["Fire"];
     }
     private void Update()
     {
+        if (_weaponData == null)
+            return;
         _fireTimer += Time.deltaTime;
 
-        if (_fireTimer > _weaponData.Firerate)
+        if (_fireTimer > 60f / _weaponData.Firerate)
         {
             _isFirePossible = true;
             _fireTimer = 0;
         }
+
+        if (_fireAction.IsPressed() && _isFirePossible)
+        {
+            Fire();
+        }
     }
-    public void Fire(InputAction.CallbackContext context)
+    private void Fire()
     {
         Ray ray = Camera.main.ScreenPointToRay(_crosshair.rectTransform.position);
-        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * _weaponData.EffectiveRange, Color.red);
 
         if (Physics.Raycast(ray, out RaycastHit hit, _weaponData.EffectiveRange))
         {
-            if (hit.rigidbody)
-                hit.rigidbody.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            if (hit.rigidbody != null)
+            {
+                hit.rigidbody.AddForce(Vector3.up * 2, ForceMode.Impulse);
+            }
         }
 
         _isFirePossible = false;

@@ -1,18 +1,31 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[System.Serializable]
+[CreateAssetMenu(fileName = "WeaponData", menuName = "ScriptableObjects/CreateWeaponDataAsset")]
+public class WeaponDataAsset : ScriptableObject
+{
+    [SerializeField]
+    private List<WeaponData> _WeaponDataList = new List<WeaponData>();
+
+    public List<WeaponData> WeaponDatas { get => _WeaponDataList; }
+}
+
+[Serializable]
 public class WeaponData
 {
     [SerializeField, Header("武器のID")]
     private int _weaponID = -1;
     [SerializeField, Header("武器の種類")]
     private WeaponType _weaponType = WeaponType.None;
+    [SerializeField, Header("武器の画像")]
+    private Image _weaponImage = null;
     [SerializeField, Header("武器の名前")]
     private string _weaponName = "None";
     [SerializeField, Header("武器の最大ダメージ")]
     private float _weaponMaxDamage = 0.0f;
-    [SerializeField, Header("最大所持弾薬数")]
+    [SerializeField, Header("最大所持弾倉数")]
     private int _maxAmmo = 0;
     [SerializeField, Header("弾倉の大きさ")]
     private int _magSize = 0;

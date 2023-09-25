@@ -745,6 +745,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088620203}
   m_CullTransparentMesh: 1
+--- !u!1 &1090532040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090532042}
+  - component: {fileID: 1090532041}
+  m_Layer: 0
+  m_Name: DataLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1090532041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090532040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75eba5443ba962c4dac0e22f535ffe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _url: https://script.google.com/macros/s/AKfycbzfhDceeVA8wvRpsjh0pXNtQ7KzgNbD0tfItGHS6BOTzGuOU4HDk0yZlTliecA__q9u/exec
+--- !u!4 &1090532042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090532040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43881541, y: 3.3725245, z: 0.8856867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1150104332
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1101,6 +1146,12 @@ PrefabInstance:
       propertyPath: _crosshair
       value: 
       objectReference: {fileID: 1088620205}
+    - target: {fileID: 7360551384607833436, guid: 75e2a3dcf71ea944fb400e0bc4aba9ac,
+        type: 3}
+      propertyPath: _weaponDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f309bddc30b545d44b053e68b78b5202,
+        type: 2}
     - target: {fileID: 9023466246925530838, guid: 75e2a3dcf71ea944fb400e0bc4aba9ac,
         type: 3}
       propertyPath: m_Name

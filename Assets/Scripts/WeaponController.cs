@@ -18,12 +18,16 @@ public class WeaponController : MonoBehaviour
     private bool _isFirePossible = false;
     private PlayerInput _playerInput = null;
     private InputAction _fireAction = null;
+    private int _zandansuu = 0;
+    private int _maxAmmo = 0;
     private void Awake()
     {
         if (_weaponID != -1)
             _weaponData = _weaponDataAsset.WeaponDatas[_weaponID];
         _playerInput = FindAnyObjectByType<PlayerInput>();
         _fireAction = _playerInput.actions["Fire"];
+        _maxAmmo = _weaponData.MaxAmmo;
+        _zandansuu = _weaponData.MagSize;
     }
     private void Update()
     {
@@ -44,6 +48,9 @@ public class WeaponController : MonoBehaviour
     }
     private void Fire()
     {
+        if (_zandansuu == 0)
+            return;
+        _zandansuu--;
         Ray ray = Camera.main.ScreenPointToRay(_crosshair.rectTransform.position);
         Debug.DrawRay(ray.origin, ray.direction * _weaponData.EffectiveRange, Color.red);
 
@@ -56,5 +63,10 @@ public class WeaponController : MonoBehaviour
         }
 
         _isFirePossible = false;
+    }
+    private void Reload()
+    {
+        int temp = _weaponData.MagSize - _zandansuu;
+
     }
 }

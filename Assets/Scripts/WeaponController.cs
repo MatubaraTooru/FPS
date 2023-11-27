@@ -7,27 +7,35 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private Transform _muzzle = null;
     [SerializeField]
-    private WeaponDataAsset _weaponDataAsset = null;
-    private WeaponData _weaponData = null;
-    [SerializeField]
-    private int _weaponID = -1;
+    private string _weaponName;
+    private Weapon _weaponData = null;
     [SerializeField]
     private Image _crosshair = null;
     private Transform _hitTarget = null;
     private float _fireTimer = 0;
-    private bool _isFirePossible = false;
+    [SerializeField]
     private PlayerInput _playerInput = null;
     private InputAction _fireAction = null;
-    private int _zandansuu = 0;
-    private int _maxAmmo = 0;
+    private int _remainingAmmo = 0;
+    private int _tortalAmmo = 0;
+    private InputAction _reloadAction = null;
+    public int RemainingAmmo { get => _remainingAmmo; }
+    public int TortalAmmo { get => _tortalAmmo; }
+
+    [SerializeField]
+    private RecoilGenerator _recoilGenerator = null;
+    [SerializeField]
+    private GameObject _bulletHole;
+    [SerializeField]
+    private bool _isInfinity;
     private void Awake()
     {
-        if (_weaponID != -1)
-            _weaponData = _weaponDataAsset.WeaponDatas[_weaponID];
+        _weaponData = (Weapon)Resources.Load(_weaponName);
         _playerInput = FindAnyObjectByType<PlayerInput>();
         _fireAction = _playerInput.actions["Fire"];
-        _maxAmmo = _weaponData.MaxAmmo;
-        _zandansuu = _weaponData.MagSize;
+        _reloadAction = _playerInput.actions["Reload"];
+        _tortalAmmo = _weaponData.TortalAmmo;
+        _remainingAmmo = _weaponData.MagSize;
     }
     private void Update()
     {
@@ -35,38 +43,37 @@ public class WeaponController : MonoBehaviour
             return;
         _fireTimer += Time.deltaTime;
 
-        if (_fireTimer > 60f / _weaponData.Firerate)
-        {
-            _isFirePossible = true;
-            _fireTimer = 0;
-        }
-
-        if (_fireAction.IsPressed() && _isFirePossible)
+        if (_fireAction.IsPressed() && _fireTimer > 60f / _weaponData.Firerate)
         {
             Fire();
+            _fireTimer = 0;
+        }
+        if (_reloadAction.IsPressed())
+        {
+            Reload();
         }
     }
     private void Fire()
     {
-        if (_zandansuu == 0)
-            return;
-        _zandansuu--;
+        if (_remainingAmmo <= 0) return;
+        _recoilGenerator.RecoilFire();
+        if (!_isInfinity) _remainingAmmo--;
         Ray ray = Camera.main.ScreenPointToRay(_crosshair.rectTransform.position);
-        Debug.DrawRay(ray.origin, ray.direction * _weaponData.EffectiveRange, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * _weaponData.Range, Color.red);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, _weaponData.EffectiveRange))
+        if (Physics.Raycast(ray, out RaycastHit hit, _weaponData.Range))
         {
-            if (hit.rigidbody != null)
+            if (hit.transform)
             {
-                hit.rigidbody.AddForce(Vector3.up * 2, ForceMode.Impulse);
+                Instantiate(_bulletHole, hit.point + hit.normal * 0.5f, Quaternion.LookRotation(-hit.normal), hit.collider.transform); ;
             }
         }
-
-        _isFirePossible = false;
     }
     private void Reload()
     {
-        int temp = _weaponData.MagSize - _zandansuu;
-
+        if (_tortalAmmo <= 0) return;
+        int temp = _tortalAmmo - (_weaponData.MagSize - _remainingAmmo);
+        _tortalAmmo = temp;
+        _remainingAmmo = _weaponData.MagSize;
     }
 }

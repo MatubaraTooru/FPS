@@ -4,29 +4,36 @@ using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Tooltip("銃口の位置")]
     private Transform _muzzle = null;
-    [SerializeField]
+    [SerializeField, Tooltip("武器の名前")]
     private string _weaponName;
+    /// <summary>入力された名前に紐づいた武器データ</summary>
     private Weapon _weaponData = null;
-    [SerializeField]
+    [SerializeField, Tooltip("クロスヘア")]
     private Image _crosshair = null;
+    /// <summary>Rayが当たったオブジェクト</summary>
     private Transform _hitTarget = null;
+    /// <summary></summary>
     private float _fireTimer = 0;
-    [SerializeField]
+    [SerializeField, Tooltip("プレイヤーインプット")]
     private PlayerInput _playerInput = null;
+    /// <summary>攻撃のアクション</summary>
     private InputAction _fireAction = null;
+    /// <summary>弾倉に残っている弾の数</summary>
     private int _remainingAmmo = 0;
+    /// <summary>今持っている弾の数</summary>
     private int _tortalAmmo = 0;
+    /// <summary>リロードアクション</summary>
     private InputAction _reloadAction = null;
     public int RemainingAmmo { get => _remainingAmmo; }
     public int TortalAmmo { get => _tortalAmmo; }
 
-    [SerializeField]
+    [SerializeField, Tooltip("リコイルジェネレーター")]
     private RecoilGenerator _recoilGenerator = null;
-    [SerializeField]
+    [SerializeField, Tooltip("弾痕")]
     private GameObject _bulletHole;
-    [SerializeField]
+    [SerializeField, Tooltip("弾数を無限にする")]
     private bool _isInfinity;
     private void Awake()
     {

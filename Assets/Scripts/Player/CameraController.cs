@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.rotation = 
+        // this.transform.rotation = 
     }
 
     public void OnMousePosition(InputAction.CallbackContext context)

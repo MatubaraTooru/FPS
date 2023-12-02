@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RecoilGenerator : MonoBehaviour
 {
+    /// <summary>Œ»İ‚Ì‰ñ“]‚ğ•Û‚·‚é•Ï”</summary>
     private Vector3 _currentRotation;
+    /// <summary>–Ú•W‚Ì‰ñ“]‚ğ•Û‚·‚é•Ï”</summary>
     private Vector3 _targetRotation;
 
     [SerializeField]

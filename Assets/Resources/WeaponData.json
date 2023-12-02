@@ -54,6 +54,17 @@
       "Firerate": "900",
       "ReloadTime": "1",
       "Range": "800"
+    },
+    {
+      "ID": "6",
+      "WeaponType": "",
+      "Name": "",
+      "MaxDamage": "",
+      "TortalAmmo": "",
+      "MagSize": "",
+      "Firerate": "",
+      "ReloadTime": "",
+      "Range": ""
     }
   ]
 }

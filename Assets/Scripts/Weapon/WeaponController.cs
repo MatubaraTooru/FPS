@@ -46,8 +46,7 @@ public class WeaponController : MonoBehaviour
     }
     private void Update()
     {
-        if (_weaponData == null)
-            return;
+        if (_weaponData == null) return;
         _fireTimer += Time.deltaTime;
 
         if (_fireAction.IsPressed() && _fireTimer > 60f / _weaponData.Firerate)
@@ -65,7 +64,7 @@ public class WeaponController : MonoBehaviour
         if (_remainingAmmo <= 0) return;
         _recoilGenerator.RecoilFire();
         if (!_isInfinity) _remainingAmmo--;
-        Ray ray = Camera.main.ScreenPointToRay(_crosshair.rectTransform.position);
+        Ray ray = new Ray(Camera.main.ScreenToWorldPoint(_crosshair.rectTransform.position),  transform.right);
         Debug.DrawRay(ray.origin, ray.direction * _weaponData.Range, Color.red);
 
         if (Physics.Raycast(ray, out RaycastHit hit, _weaponData.Range))

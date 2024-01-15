@@ -9,16 +9,16 @@ public class RecoilGenerator : MonoBehaviour
     /// <summary>–Ú•W‚Ì‰ñ“]‚ğ•Û‚·‚é•Ï”</summary>
     private Vector3 _targetRotation;
 
-    [SerializeField]
+    [SerializeField, Tooltip("X²•ûŒü‚É‚Ç‚Ì’ö“xŠgU‚·‚é‚©")]
     private float _recoilX;
-    [SerializeField]
+    [SerializeField, Tooltip("Y²•ûŒü‚É‚Ç‚Ì’ö“xŠgU‚·‚é‚©")]
     private float _recoilY;
-    [SerializeField]
+    [SerializeField, Tooltip("Z²•ûŒü‚É‚Ç‚Ì’ö“xŠgU‚·‚é‚©")]
     private float _recoilZ;
 
     [SerializeField]
     private float _snappiness;
-    [SerializeField]
+    [SerializeField, Tooltip("Œ³‚ÌˆÊ’u‚É–ß‚é‚Ü‚Å‚ÌƒXƒs[ƒh")]
     private float _returnSpeed;
 
     private void Update()

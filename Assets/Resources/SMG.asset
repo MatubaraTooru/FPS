@@ -16,8 +16,8 @@ MonoBehaviour:
   WeaponType: 4
   Name: SMG
   MaxDamage: 20
-  TortalAmmo: 175
+  TotalAmmo: 175
   MagSize: 25
-  Firerate: 500
+  FireRate: 500
   ReloadTime: 1
   Range: 450

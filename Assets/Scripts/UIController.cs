@@ -10,12 +10,12 @@ public class UIController : MonoBehaviour
     void Start()
     {
         _weaponController = FindAnyObjectByType<WeaponController>();
-        _ammoText.text = $"{_weaponController.RemainingAmmo} / {_weaponController.TortalAmmo}";
+        _ammoText.text = $"{_weaponController.RemainingAmmo} / {_weaponController.TotalAmmo}";
     }
 
     // Update is called once per frame
     void Update()
     {
-        _ammoText.text = $"{_weaponController.RemainingAmmo} / {_weaponController.TortalAmmo}";
+        _ammoText.text = $"{_weaponController.RemainingAmmo} / {_weaponController.TotalAmmo}";
     }
 }

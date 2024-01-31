@@ -32,9 +32,9 @@ public static class WeaponDataJsonLoader
                     weapon.WeaponType = (WeaponTypeData)Enum.Parse(typeof(WeaponTypeData), weaponData.WeaponType);
                     weapon.Name = weaponData.Name;
                     weapon.MaxDamage = weaponData.MaxDamage;
-                    weapon.TortalAmmo = weaponData.TortalAmmo;
+                    weapon.TotalAmmo = weaponData.TotalAmmo;
                     weapon.MagSize = weaponData.MagSize;
-                    weapon.Firerate = weaponData.Firerate;
+                    weapon.FireRate = weaponData.FireRate;
                     weapon.ReloadTime = weaponData.ReloadTime;
                     weapon.Range = weaponData.Range;
 
@@ -48,9 +48,9 @@ public static class WeaponDataJsonLoader
                     obj.WeaponType = (WeaponTypeData)Enum.Parse(typeof(WeaponTypeData), weaponData.WeaponType);
                     obj.Name = weaponData.Name;
                     obj.MaxDamage = weaponData.MaxDamage;
-                    obj.TortalAmmo = weaponData.TortalAmmo;
+                    obj.TotalAmmo = weaponData.TotalAmmo;
                     obj.MagSize = weaponData.MagSize;
-                    obj.Firerate = weaponData.Firerate;
+                    obj.FireRate = weaponData.FireRate;
                     obj.ReloadTime = weaponData.ReloadTime;
                     obj.Range = weaponData.Range;
 

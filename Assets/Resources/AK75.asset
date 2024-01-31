@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e04295170f8398b43b1ed9f44677100e, type: 3}
-  m_Name: a
+  m_Name: AK75
   m_EditorClassIdentifier: 
-  ID: 5
-  WeaponType: 2
-  Name: a
-  MaxDamage: 1
-  TortalAmmo: 1
-  MagSize: 1
-  Firerate: 11
+  ID: 6
+  WeaponType: 1
+  Name: AK75
+  MaxDamage: 35
+  TotalAmmo: 150
+  MagSize: 30
+  FireRate: 600
   ReloadTime: 1
-  Range: 1
+  Range: 500

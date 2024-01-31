@@ -16,8 +16,8 @@ MonoBehaviour:
   WeaponType: 1
   Name: AR
   MaxDamage: 35
-  TortalAmmo: 120
+  TotalAmmo: 120
   MagSize: 30
-  Firerate: 700
+  FireRate: 700
   ReloadTime: 1
   Range: 600

@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     float _verticalInput;
     Rigidbody _rb;
     bool _isSprinting = false;
-    [SerializeField]
-    private Camera _mainCamera = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         Vector3 dir = Vector3.forward * _verticalInput + Vector3.right * _horizontalInput;
-        dir = _mainCamera.transform.TransformDirection(dir);
+        dir = Camera.main.transform.TransformDirection(dir);
         dir.y = 0;
 
         if (dir != Vector3.zero) this.transform.forward = dir;

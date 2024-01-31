@@ -16,8 +16,8 @@ MonoBehaviour:
   WeaponType: 2
   Name: SG
   MaxDamage: 100
-  TortalAmmo: 45
+  TotalAmmo: 45
   MagSize: 9
-  Firerate: 100
+  FireRate: 100
   ReloadTime: 1
   Range: 80

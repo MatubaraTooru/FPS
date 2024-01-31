@@ -16,8 +16,8 @@ MonoBehaviour:
   WeaponType: 1
   Name: M1
   MaxDamage: 24
-  TortalAmmo: 150
+  TotalAmmo: 150
   MagSize: 25
-  Firerate: 900
+  FireRate: 900
   ReloadTime: 1
   Range: 800

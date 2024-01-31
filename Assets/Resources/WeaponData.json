@@ -2,12 +2,12 @@
   "Data": [
     {
       "ID": "1",
-      "WeaponType": "AssultRifle",
+      "WeaponType": "AssaultRifle",
       "Name": "AR",
       "MaxDamage": "35",
-      "TortalAmmo": "120",
+      "TotalAmmo": "120",
       "MagSize": "30",
-      "Firerate": "700",
+      "FireRate": "700",
       "ReloadTime": "1",
       "Range": "600"
     },
@@ -16,9 +16,9 @@
       "WeaponType": "ShotGun",
       "Name": "SG",
       "MaxDamage": "100",
-      "TortalAmmo": "45",
+      "TotalAmmo": "45",
       "MagSize": "9",
-      "Firerate": "100",
+      "FireRate": "100",
       "ReloadTime": "1",
       "Range": "80"
     },
@@ -27,9 +27,9 @@
       "WeaponType": "SubmachineGun",
       "Name": "SMG",
       "MaxDamage": "20",
-      "TortalAmmo": "175",
+      "TotalAmmo": "175",
       "MagSize": "25",
-      "Firerate": "500",
+      "FireRate": "500",
       "ReloadTime": "1",
       "Range": "450"
     },
@@ -38,33 +38,33 @@
       "WeaponType": "HandGun",
       "Name": "HG",
       "MaxDamage": "15",
-      "TortalAmmo": "51",
+      "TotalAmmo": "51",
       "MagSize": "17",
-      "Firerate": "1200",
+      "FireRate": "1200",
       "ReloadTime": "1",
       "Range": "50"
     },
     {
       "ID": "5",
-      "WeaponType": "AssultRifle",
+      "WeaponType": "AssaultRifle",
       "Name": "M1",
       "MaxDamage": "24",
-      "TortalAmmo": "150",
+      "TotalAmmo": "150",
       "MagSize": "25",
-      "Firerate": "900",
+      "FireRate": "900",
       "ReloadTime": "1",
       "Range": "800"
     },
     {
       "ID": "6",
-      "WeaponType": "",
-      "Name": "",
-      "MaxDamage": "",
-      "TortalAmmo": "",
-      "MagSize": "",
-      "Firerate": "",
-      "ReloadTime": "",
-      "Range": ""
+      "WeaponType": "AssaultRifle",
+      "Name": "AK75",
+      "MaxDamage": "35",
+      "TotalAmmo": "150",
+      "MagSize": "30",
+      "FireRate": "600",
+      "ReloadTime": "1",
+      "Range": "500"
     }
   ]
 }

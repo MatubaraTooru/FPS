@@ -16,8 +16,8 @@ MonoBehaviour:
   WeaponType: 5
   Name: HG
   MaxDamage: 15
-  TortalAmmo: 51
+  TotalAmmo: 51
   MagSize: 17
-  Firerate: 1200
+  FireRate: 1200
   ReloadTime: 1
   Range: 50

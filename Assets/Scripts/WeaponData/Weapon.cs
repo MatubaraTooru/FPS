@@ -8,9 +8,9 @@ public class WeaponData
     public string WeaponType;
     public string Name;
     public int MaxDamage;
-    public int TortalAmmo;
+    public int TotalAmmo;
     public int MagSize;
-    public int Firerate;
+    public int FireRate;
     public int ReloadTime;
     public int Range;
 }
@@ -27,16 +27,16 @@ public class Weapon : ScriptableObject
     public WeaponTypeData WeaponType;
     public string Name;
     public int MaxDamage;
-    public int TortalAmmo;
+    public int TotalAmmo;
     public int MagSize;
-    public int Firerate;
+    public int FireRate;
     public int ReloadTime;
     public int Range;
 }
 public enum WeaponTypeData
 {
     None,
-    AssultRifle,
+    AssaultRifle,
     ShotGun,
     SniperRifle,
     SubmachineGun,

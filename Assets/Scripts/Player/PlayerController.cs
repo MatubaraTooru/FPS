@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         dir = Camera.main.transform.TransformDirection(dir);
         dir.y = 0;
 
-        if (dir != Vector3.zero) this.transform.forward = dir;
+        // if (dir != Vector3.zero) this.transform.forward = dir;
         float y = _rb.velocity.y;
 
         if (_verticalInput < 0)

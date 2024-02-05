@@ -65,7 +65,9 @@ public class WeaponController : MonoBehaviour
     private void Fire()
     {
         _recoilGenerator.RecoilFire();
+
         if (!_isInfinity) _remainingAmmo--;
+
         Ray ray = new Ray(Camera.main.ScreenToWorldPoint(_crosshair.rectTransform.position),  transform.forward * -1);
         Debug.DrawRay(_muzzle.position, ray.direction * _weaponData.Range, Color.red);
 

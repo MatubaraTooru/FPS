@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "bz-soft.ragdoll-helper": {
-      "version": "file:bz-soft.ragdoll-helper",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.cysharp.unitask": {
       "version": "2.5.3",
       "depth": 0,
@@ -21,7 +15,7 @@
       "url": "https://package.openupm.com"
     },
     "com.unity.burst": {
-      "version": "1.8.7",
+      "version": "1.8.8",
       "depth": 1,
       "source": "registry",
       "dependencies": {

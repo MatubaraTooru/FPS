@@ -19,7 +19,7 @@ public class RecoilGenerator : MonoBehaviour
 
     [SerializeField, Tooltip("反動の速さ"), Range(1f, 10f)]
     private float _snappiness;
-    [SerializeField, Tooltip("元の位置に戻るまでのスピード"), Range(1f, 10f)]
+    [SerializeField, Tooltip("元の位置に戻るまでのスピード"), Range(0f, 10f)]
     private float _returnSpeed;
 
     private void Update()

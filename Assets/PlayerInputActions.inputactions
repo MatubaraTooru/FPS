@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Fire",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "a4392dbd-aaf7-4489-8a53-097b4a318d19",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -54,6 +54,15 @@
                     "name": "Reload",
                     "type": "Button",
                     "id": "502903b0-e6a2-40ba-8462-bcda7888239a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "18350e7b-e577-48ff-aaae-6ab943b09f5c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -322,6 +331,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc5ea526-c6fd-4491-bbcf-f6b4eeefc7df",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

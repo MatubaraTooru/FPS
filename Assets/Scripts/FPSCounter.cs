@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FPSCounter : MonoBehaviour
 {
-    [SerializeField]
-    private bool _isShowFPS = false;
+    [SerializeField] bool _isShowFPS = false;
 
     int _frameCount = 0;
     float _prevTime = 0f;

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 277976844984312051}
   - component: {fileID: 7660355529408432215}
   - component: {fileID: 6341555326545747059}
+  - component: {fileID: 3766128700233198236}
   m_Layer: 0
   m_Name: AK75
   m_TagString: Untagged
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e69dbab296b28a4c853fb3698798b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
   _weaponData: {fileID: 11400000, guid: d7baa12ab7070eb4ca94c5a6a73c9e38, type: 2}
   _muzzle: {fileID: 8943439003252292213}
   _crosshair: {fileID: 0}
@@ -140,6 +142,27 @@ MonoBehaviour:
   _bulletHole: {fileID: 6660047410464688799, guid: 2b19e026a6c1423438c0dd8aff555b18,
     type: 3}
   _isInfinity: 1
+--- !u!95 &3766128700233198236
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686580606573794810}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6919173743791079419
 GameObject:
   m_ObjectHideFlags: 0

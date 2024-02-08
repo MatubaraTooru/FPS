@@ -1,66 +1,61 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Rigidbody))]
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float _moveSpeed = 5f;
+    [SerializeField] float _moveSpeed = 5f;
+    [SerializeField] float _splintSpeed = 3f;
+    [SerializeField] float _groundedOffset = 0.15f;
+    [SerializeField] float _groundedRadius = 0.5f;
+    [SerializeField] LayerMask _groundLayers;
 
-    [SerializeField]
-    private float _splintSpeed = 3f;
-
-    Vector2 _inputVector;
+    Vector3 _inputVector;
     Rigidbody _rb;
     bool _isSprinting = false;
     Vector3 _normalVector = default;
-    // Start is called before the first frame update
-    void Start()
+    bool _isGrounded = false;
+    float _verticalVelocity = 0;
+    bool _isJumping = false;
+    void Awake()
     {
         _rb = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
     {
-        MovePlayer();
+        Move();
     }
 
     public void GetMoveInput(InputAction.CallbackContext context)
     {
-        _inputVector = Vector2.zero;
-        _inputVector = context.ReadValue<Vector2>();
-        Debug.Log($"Y : {_inputVector.y} X : {_inputVector.x}");
+        _inputVector.z = context.ReadValue<Vector2>().y;
+        _inputVector.x = context.ReadValue<Vector2>().x;
     }
     public void GetSprintInput(InputAction.CallbackContext context)
     {
         _isSprinting = context.ReadValueAsButton();
     }
-    private void MovePlayer()
+    public void GetJumpInput(InputAction.CallbackContext context)
     {
-        Vector3 dir = Vector3.forward * _inputVector.y + Vector3.right * _inputVector.x;
+        _isJumping = true;
+    }
+    private void Move()
+    {
+        Vector3 dir = Vector3.forward * _inputVector.z + Vector3.right * _inputVector.x;
         dir = Camera.main.transform.TransformDirection(dir);
         dir.y = 0;
-        Vector3 onPlane = Vector3.ProjectOnPlane(_inputVector, _normalVector);
-        Debug.DrawRay(this.transform.position, onPlane, Color.red, 20);
+        dir = Vector3.ProjectOnPlane(dir, _normalVector);
 
-        float y = _rb.velocity.y;
-
-        if (_isSprinting && _inputVector.y > 0)
+        if (_isSprinting && _inputVector.z > 0)
         {
-            _rb.velocity = dir.normalized * _moveSpeed * _splintSpeed + Vector3.up * y;
+            _rb.velocity = dir.normalized * _moveSpeed * _splintSpeed;
         }
         else
         {
-            _rb.velocity = dir.normalized * _moveSpeed + Vector3.up * y;
+            _rb.velocity = dir.normalized * _moveSpeed;
         }
     }
-
-    private void GetNormal()
-    {
-        // Ray ray = 
-    }
-
     private void OnCollisionStay(Collision collision)
     {
         _normalVector = collision.contacts[0].normal;

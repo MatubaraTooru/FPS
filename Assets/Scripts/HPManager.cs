@@ -13,23 +13,29 @@ public class HPManager : MonoBehaviour
 
     [SerializeField]
     Slider _hpSlider;
-    float _currentHP;
+
+    public float HP { get; private set; }
 
     void Start()
     {
-        _currentHP = _maxHP;
-        _hpSlider.maxValue = _maxHP;
-        _hpSlider.value = _currentHP;
+        HP = _maxHP;
+
+        if (_hpSlider != null)
+        {
+            _hpSlider.maxValue = _maxHP;
+            _hpSlider.value = HP;
+        }
     }
     private void Update()
     {
-        _hpSlider.value = _currentHP;
+        if (_hpSlider != null) _hpSlider.value = HP;
     }
     public void GetDamage(int damage)
     {
-        _currentHP -= damage;
-        if (_currentHP <= 0)
+        HP -= damage;
+        if (HP <= 0)
         {
+            this.gameObject.SetActive(false);
             Debug.Log("Dead");
         }
     }

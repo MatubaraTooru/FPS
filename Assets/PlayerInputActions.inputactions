@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "Aim",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "e9ea9bfb-427b-4c20-959b-b02ecc2d5e30",
                     "expectedControlType": "Button",
                     "processors": "",

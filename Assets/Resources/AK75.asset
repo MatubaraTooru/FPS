@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 6
   WeaponType: 1
   Name: AK75
-  MaxDamage: 35
+  MaxDamage: 30
   TotalAmmo: 150
   MagSize: 30
   FireRate: 600

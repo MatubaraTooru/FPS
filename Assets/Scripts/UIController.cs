@@ -5,11 +5,11 @@ public class UIController : MonoBehaviour
 {
     [SerializeField]
     private Text _ammoText;
-    private WeaponController _weaponController;
+    private GunController _weaponController;
     // Start is called before the first frame update
     void Start()
     {
-        _weaponController = FindAnyObjectByType<WeaponController>();
+        _weaponController = FindAnyObjectByType<GunController>();
         _ammoText.text = $"{_weaponController.RemainingAmmo} / {_weaponController.TotalAmmo}";
     }
 

@@ -7,11 +7,7 @@ public class BulletHoleRemover : MonoBehaviour
     [SerializeField, Tooltip("弾痕の最大保持数")]
     private int _holeCount = 10;
     /// <summary>シーン上に存在する弾痕を保持しておくキュー</summary>
-    private Queue<GameObject> _bulletHoles;
-    void Start()
-    {
-        _bulletHoles = new();
-    }
+    private Queue<GameObject> _bulletHoles = new();
 
     void Update()
     {

@@ -42,8 +42,7 @@ GameObject:
   - component: {fileID: 9008696669371221287}
   - component: {fileID: 277976844984312051}
   - component: {fileID: 7660355529408432215}
-  - component: {fileID: 6341555326545747059}
-  - component: {fileID: 3766128700233198236}
+  - component: {fileID: 252109493716391867}
   m_Layer: 0
   m_Name: AK75
   m_TagString: Untagged
@@ -59,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6686580606573794810}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.2770001, y: -0.25700006, z: 0.59799993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -121,7 +120,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6341555326545747059
+--- !u!114 &252109493716391867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,39 +129,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6686580606573794810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e69dbab296b28a4c853fb3698798b64, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e7f27ec7d31ddb4da9d223ab9af879c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
+  _firemode: 0
   _weaponData: {fileID: 11400000, guid: d7baa12ab7070eb4ca94c5a6a73c9e38, type: 2}
   _muzzle: {fileID: 8943439003252292213}
   _crosshair: {fileID: 0}
   _playerInput: {fileID: 0}
-  _recoilGenerator: {fileID: 0}
   _bulletHole: {fileID: 6660047410464688799, guid: 2b19e026a6c1423438c0dd8aff555b18,
     type: 3}
-  _isInfinity: 1
---- !u!95 &3766128700233198236
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6686580606573794810}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  _isInfinity: 0
+  _isToggleAim: 0
+  _animator: {fileID: 0}
+  _isAiming: 0
+  _notAimingRecoilX: 0.5
+  _notAimingRecoilY: 0.3
+  _aimingRecoilX: 0
+  _aimingRecoilY: 0
+  _snappiness: 3
+  _cameraController: {fileID: 0}
 --- !u!1 &6919173743791079419
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] HPManager _hpManager;
     [SerializeField] Animator _animator;
     [SerializeField] Transform _muzzle;
+    [SerializeField] Weapon _weaponData;
 
     public EnemyStateMachine StateMachine => _enemyStateMachine;
     public NavMeshAgent Agent => _agent;
@@ -20,6 +21,7 @@ public class EnemyController : MonoBehaviour
     public TargetDetector TargetDetector => _targetDetector;
     public Animator Animator => _animator;
     public Transform Muzzle => _muzzle;
+    public Weapon Weapon => _weaponData;
 
     private void Awake()
     {

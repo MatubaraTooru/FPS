@@ -16,15 +16,6 @@ public class MoveState : IState
 
     public void Update()
     {
-        if (_enemyController.TargetDetector.IsTargetDetected)
-        {
-            _enemyController.StateMachine.TransitionTo(_enemyController.StateMachine.AttackState);
-        }
-        else if (_enemyController.Agent.velocity == Vector3.zero)
-        {
-            _enemyController.StateMachine.TransitionTo(_enemyController.StateMachine.IdleState);
-        }
-
         if (_enemyController.Agent.velocity.magnitude > 0)
         {
             _enemyController.Animator.SetBool("IsMoving", true);
@@ -32,6 +23,14 @@ public class MoveState : IState
         else
         {
             _enemyController.Animator.SetBool("IsMoving", false);
+        }
+        if (_enemyController.TargetDetector.IsTargetDetected)
+        {
+            _enemyController.StateMachine.TransitionTo(_enemyController.StateMachine.AttackState);
+        }
+        else if (_enemyController.Agent.velocity == Vector3.zero)
+        {
+            _enemyController.StateMachine.TransitionTo(_enemyController.StateMachine.IdleState);
         }
     }
 

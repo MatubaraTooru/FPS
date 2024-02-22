@@ -16,7 +16,6 @@ public class TargetDetector : MonoBehaviour
     private void Awake()
     {
         TargetTransform = FindAnyObjectByType<PlayerController>().transform;
-        Debug.Log(TargetTransform.position);
     }
 
     private void SearchTarget()
@@ -28,8 +27,6 @@ public class TargetDetector : MonoBehaviour
         {
             if (Physics.Raycast(this.transform.position, dir, out RaycastHit hit, _angle))
             {
-                Debug.DrawRay(transform.position, dir, Color.red, _angle);
-
                 if (hit.collider.CompareTag(_tag))
                 {
                     IsTargetDetected = true;

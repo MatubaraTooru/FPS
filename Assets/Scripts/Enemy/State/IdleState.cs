@@ -25,7 +25,6 @@ public class IdleState : IState
         {
             _enemyController.StateMachine.TransitionTo (_enemyController.StateMachine.AttackState);
         }
-        Debug.Log("Updating Idle State");
     }
 
     public void FixedUpdate()

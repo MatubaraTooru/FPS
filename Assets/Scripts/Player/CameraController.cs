@@ -50,7 +50,6 @@ public class CameraController : MonoBehaviour
     // リコイルを反映するメソッド
     public void ApplyRecoil(Vector2 recoilRotation)
     {
-        Debug.Log($"{recoilRotation.x} {recoilRotation.y}");
         _desiredHorizontalRotation -= recoilRotation.y;
         _desiredVerticalRotation -= recoilRotation.x;
         _desiredVerticalRotation = Mathf.Clamp(_desiredVerticalRotation, _minVerticalAngle, _maxVerticalAngle);
